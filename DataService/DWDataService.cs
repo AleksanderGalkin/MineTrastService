@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicModule;
+using System;
 using System.Collections.Generic;
 using System.Data.Services;
 using System.Data.Services.Common;
@@ -20,6 +21,8 @@ namespace DWDataService
         {
             get
             {
+                MineTrustFiles mt = new MineTrustFiles("/server='ogk-s-appmine01'", "Folders\\Managed Folders\\Ore Control\\Polyus Gold\\BL\\300","E:\\TEMP");
+                mt.GetObjFromFile("BL-300-002-results.xlsm");
                 return new List<Person>()
                     {
                         new Person() { ID = 1, Name = "Steve"},
